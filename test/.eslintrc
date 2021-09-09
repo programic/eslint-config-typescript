@@ -1,0 +1,17 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["jest"],
+  "extends": [
+    "../index.js",
+    "plugin:jest/all"
+  ],
+  "env": {
+    "jest": true,
+    "jest/globals": true
+  },
+  "rules": {
+    "jest/prefer-expect-assertions": ["error", {
+      "onlyFunctionsWithAsyncKeyword": true
+    }]
+  }
+}
