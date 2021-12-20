@@ -1,6 +1,6 @@
 # @programic/eslint-config-typescript
 
-[![npm version](https://badge.fury.io/js/%40programic%2Feslint-config-typescript.svg)](http://badge.fury.io/js/@programic/eslint-config-typescript)
+[![npm version](https://badge.fury.io/js/@programic%2Feslint-config-typescript.svg)](https://badge.fury.io/js/@programic%2Feslint-config-typescript)
 
 This package provides Programic's EcmaScript + TypeScript .eslintrc as an extensible shared config.
 
