@@ -26,6 +26,7 @@ module.exports = {
   }],
 
   rules: {
+    'no-undef': 'off',
     // Cannot annotate types within deconstructing, so it's necessary
     // to declare variables without object/array destructing
     'prefer-destructuring': 'off',
@@ -39,5 +40,9 @@ module.exports = {
       ts: 'never',
       tsx: 'never',
     }],
+    '@typescript-eslint/no-unused-vars': 'error',
+    '@typescript-eslint/no-explicit-any': 'error',
+    '@typescript-eslint/no-non-null-assertion': 'error',
+    '@typescript-eslint/explicit-module-boundary-types': 'error',
   },
 };
