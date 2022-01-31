@@ -2,8 +2,9 @@ import { Linter } from 'eslint';
 import Config = Linter.Config;
 import ConfigOverride = Linter.ConfigOverride;
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const config:Config = require('../..');
+/* eslint-disable-next-line max-len */
+/* eslint-disable-next-line @typescript-eslint/no-require-imports, @typescript-eslint/no-var-requires */
+const config: Config = require('../..');
 
 const expectIsObject = (value: unknown): void => {
   expect(value).not.toBeNull();
@@ -15,12 +16,22 @@ const expectIsArrayOfLength = (givenArray: unknown, length: number): void => {
   expect(givenArray).toHaveLength(length);
 };
 const getOverrideForJSFiles = (
-  overrides: Array<ConfigOverride>,
+  overrides: ConfigOverride[],
 ): Linter.ConfigOverride<Linter.RulesRecord> | undefined => {
   return overrides.find((override: ConfigOverride) => {
     return Array.isArray(override.files)
       && override.files.length === 1
       && override.files[0] === '*.js';
+  });
+};
+const getOverrideForTSFiles = (
+  overrides: ConfigOverride[],
+): Linter.ConfigOverride<Linter.RulesRecord> | undefined => {
+  return overrides.find((override: ConfigOverride) => {
+    return Array.isArray(override.files)
+      && override.files.length === 2
+      && override.files[0] === '*.ts'
+      && override.files[1] === '*.tsx';
   });
 };
 
@@ -36,9 +47,12 @@ describe('valid config', () => {
   });
 
   it('only extends programic-base and plugin:@typescript-eslint/recommended', () => {
-    expectIsArrayOfLength(config.extends, 2);
-    expect(config.extends?.[0]).toBe('@programic/eslint-config-base');
-    expect(config.extends?.[1]).toBe('plugin:@typescript-eslint/recommended');
+    const overrideForTsFiles = getOverrideForTSFiles(config?.overrides ?? []);
+
+    expectIsArrayOfLength(overrideForTsFiles?.extends, 2);
+    expect(overrideForTsFiles?.extends?.[0]).toBe('@programic/eslint-config-base');
+    expect(overrideForTsFiles?.extends?.[1]).toBe('plugin:@typescript-eslint/recommended');
+    expect(overrideForTsFiles?.parserOptions).toHaveProperty('project');
   });
 
   it('uses the default ESLint parser (Espree) for .js files', () => {
