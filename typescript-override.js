@@ -48,17 +48,7 @@ module.exports = {
       allowHigherOrderFunctions: false,
       allowTypedFunctionExpressions: false,
     }],
-    '@typescript-eslint/member-delimiter-style': ['error', {
-      multiline: {
-        delimiter: 'semi',
-        requireLast: true,
-      },
-      singleline: {
-        delimiter: 'semi',
-        requireLast: true,
-      },
-      multilineDetection: 'brackets',
-    }],
+    '@typescript-eslint/member-delimiter-style': 'error',
     '@typescript-eslint/method-signature-style': ['error', 'property'],
     '@typescript-eslint/no-confusing-non-null-assertion': 'error',
     '@typescript-eslint/no-parameter-properties': 'error',
