@@ -1,6 +1,6 @@
 {
   "name": "@programic/eslint-config-typescript",
-  "version": "8.0.0",
+  "version": "8.0.1",
   "description": "Programic's Typescript ESLint config, following our styleguide.",
   "main": "index.js",
   "scripts": {
@@ -46,8 +46,8 @@
   "devDependencies": {
     "@types/eslint": "^7.28.0",
     "@types/jest": "^27.0.3",
-    "@typescript-eslint/eslint-plugin": "^4.28.5",
-    "@typescript-eslint/parser": "^4.28.5",
+    "@typescript-eslint/eslint-plugin": "^5.25.0",
+    "@typescript-eslint/parser": "^5.25.0",
     "eslint": "^7.31.0",
     "eslint-import-resolver-typescript": "^2.4.0",
     "eslint-plugin-import": "^2.23.4",
