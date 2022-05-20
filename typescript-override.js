@@ -16,6 +16,8 @@ module.exports = {
   },
   rules: {
     'no-undef': 'off',
+    'no-shadow': 'off',
+    'no-use-before-define': 'off',
     // Cannot annotate types within deconstructing, so it's necessary
     // to declare variables without object/array destructing
     'prefer-destructuring': 'off',
@@ -29,8 +31,10 @@ module.exports = {
       ts: 'never',
       tsx: 'never',
     }],
+    '@typescript-eslint/no-shadow': 'error',
     '@typescript-eslint/no-unused-vars': 'error',
     '@typescript-eslint/no-explicit-any': 'error',
+    '@typescript-eslint/no-use-before-define': 'error',
     '@typescript-eslint/no-non-null-assertion': 'error',
     '@typescript-eslint/array-type': ['error', {
       default: 'array-simple',
@@ -39,6 +43,7 @@ module.exports = {
     '@typescript-eslint/consistent-indexed-object-style': 'error',
     '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
     '@typescript-eslint/consistent-type-imports': 'error',
+    '@typescript-eslint/consistent-type-exports': 'error',
     '@typescript-eslint/explicit-function-return-type': 'error',
     '@typescript-eslint/explicit-member-accessibility': 'error',
     '@typescript-eslint/explicit-module-boundary-types': ['error', {
