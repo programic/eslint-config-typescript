@@ -15,7 +15,7 @@ const expectIsArrayOfLength = (givenArray: unknown, length: number): void => {
   expect(Array.isArray(givenArray)).toBe(true);
   expect(givenArray).toHaveLength(length);
 };
-const getOverrideForJSFiles = (
+const getOverrideForJsFiles = (
   overrides: ConfigOverride[],
 ): Linter.ConfigOverride<Linter.RulesRecord> | undefined => {
   return overrides.find((override: ConfigOverride) => {
@@ -24,7 +24,7 @@ const getOverrideForJSFiles = (
       && override.files[0] === '*.js';
   });
 };
-const getOverrideForTSFiles = (
+const getOverrideForTsFiles = (
   overrides: ConfigOverride[],
 ): Linter.ConfigOverride<Linter.RulesRecord> | undefined => {
   return overrides.find((override: ConfigOverride) => {
@@ -47,7 +47,7 @@ describe('valid config', () => {
   });
 
   it('only extends programic-base and plugin:@typescript-eslint/recommended', () => {
-    const overrideForTsFiles = getOverrideForTSFiles(config?.overrides ?? []);
+    const overrideForTsFiles = getOverrideForTsFiles(config?.overrides ?? []);
 
     expectIsArrayOfLength(overrideForTsFiles?.extends, 2);
     expect(overrideForTsFiles?.extends?.[0]).toBe('@programic/eslint-config-base');
@@ -56,17 +56,17 @@ describe('valid config', () => {
   });
 
   it('uses the default ESLint parser (Espree) for .js files', () => {
-    const overrideForJSFiles = getOverrideForJSFiles(config?.overrides ?? []);
+    const overrideForJsFiles = getOverrideForJsFiles(config?.overrides ?? []);
 
-    expectIsObject(overrideForJSFiles);
-    expect(overrideForJSFiles?.parser).toBe('espree');
+    expectIsObject(overrideForJsFiles);
+    expect(overrideForJsFiles?.parser).toBe('espree');
   });
 
   it('only extends programic-base for .js files', () => {
-    const overrideForJSFiles = getOverrideForJSFiles(config?.overrides ?? []);
+    const overrideForJsFiles = getOverrideForJsFiles(config?.overrides ?? []);
 
-    expectIsObject(overrideForJSFiles);
-    expectIsArrayOfLength(overrideForJSFiles?.extends, 1);
-    expect(overrideForJSFiles?.extends?.[0]).toBe('@programic/eslint-config-base');
+    expectIsObject(overrideForJsFiles);
+    expectIsArrayOfLength(overrideForJsFiles?.extends, 1);
+    expect(overrideForJsFiles?.extends?.[0]).toBe('@programic/eslint-config-base');
   });
 });

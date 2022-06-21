@@ -69,5 +69,43 @@ module.exports = {
     '@typescript-eslint/promise-function-async': 'error',
     '@typescript-eslint/require-array-sort-compare': 'error',
     '@typescript-eslint/type-annotation-spacing': 'error',
+    '@typescript-eslint/naming-convention': [
+      'error',
+      // Default selector
+      {
+        selector: 'default',
+        format: ['strictCamelCase'],
+      },
+      // Group selectors
+      {
+        selector: 'property',
+        format: ['strictCamelCase', 'StrictPascalCase'],
+      },
+      {
+        selector: 'method',
+        format: ['strictCamelCase'],
+      },
+      {
+        selector: 'memberLike',
+        format: ['strictCamelCase'],
+      },
+      {
+        selector: 'typeLike',
+        format: ['PascalCase'],
+      },
+      // Individual selectors
+      {
+        selector: 'variable',
+        format: ['strictCamelCase', 'UPPER_CASE'],
+      },
+      {
+        selector: 'function',
+        format: ['strictCamelCase'],
+      },
+      {
+        selector: 'parameter',
+        format: ['strictCamelCase'],
+      },
+    ],
   },
 };
