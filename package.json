@@ -1,6 +1,6 @@
 {
   "name": "@programic/eslint-config-typescript",
-  "version": "9.0.0",
+  "version": "10.0.0",
   "description": "Programic's Typescript ESLint config, following our styleguide.",
   "main": "index.js",
   "scripts": {
@@ -41,7 +41,7 @@
     "typescript": ">=3.8.0"
   },
   "dependencies": {
-    "@programic/eslint-config-base": "^7.0.2"
+    "@programic/eslint-config-base": "^7.0.3"
   },
   "devDependencies": {
     "@types/eslint": "^7.28.0",

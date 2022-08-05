@@ -106,6 +106,16 @@ module.exports = {
         selector: 'parameter',
         format: ['strictCamelCase'],
       },
+      {
+        selector: 'objectLiteralProperty',
+        modifiers: ['requiresQuotes'],
+        format: null,
+      },
+      {
+        selector: 'objectLiteralMethod',
+        modifiers: ['requiresQuotes'],
+        format: null,
+      },
     ],
   },
 };
