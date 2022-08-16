@@ -1,6 +1,6 @@
 {
   "name": "@programic/eslint-config-typescript",
-  "version": "12.0.0",
+  "version": "12.0.1",
   "description": "Programic's Typescript ESLint config, following our styleguide.",
   "main": "index.js",
   "scripts": {
