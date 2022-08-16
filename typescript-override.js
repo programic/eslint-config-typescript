@@ -1,4 +1,5 @@
 module.exports = {
+  plugins: ['@programic'],
   files: ['*.ts', '*.tsx'],
   extends: [
     '@programic/eslint-config-base',
@@ -31,6 +32,31 @@ module.exports = {
       ts: 'never',
       tsx: 'never',
     }],
+    'import/order': ['error', {
+      groups: [
+        ['builtin', 'external'],
+        ['internal', 'parent', 'sibling', 'index', 'object'],
+        ['type'],
+      ],
+      pathGroups: [
+        {
+          pattern: '@tests/**',
+          group: 'internal',
+        },
+        {
+          pattern: '?(@)[a-z]*',
+          group: 'type',
+          position: 'before',
+        },
+        {
+          pattern: '?(@)[a-z]*/**',
+          group: 'type',
+          position: 'before',
+        },
+      ],
+      pathGroupsExcludedImportTypes: ['builtin', 'external'],
+    }],
+    '@programic/newline-before-first-type-only-import': 'error',
     '@typescript-eslint/no-shadow': 'error',
     '@typescript-eslint/no-unused-vars': 'error',
     '@typescript-eslint/no-explicit-any': 'error',
