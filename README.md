@@ -1,3 +1,5 @@
+> :warning: This package is deprecated. Use `@programic/eslint-plugin` instead.
+
 # @programic/eslint-config-typescript
 
 [![npm version](https://badge.fury.io/js/@programic%2Feslint-config-typescript.svg)](https://badge.fury.io/js/@programic%2Feslint-config-typescript)
